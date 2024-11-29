@@ -4,8 +4,6 @@
 ※サンプルアプリは[Django Girlsのチュートリアル](https://tutorial.djangogirls.org/ja/)をベースに多少編集を施したものになります。
 Web+APP+DBの一般的なWeb3層アプリになっています。
 
-![blog](./images/architecture.png)
-
 ここではアプリケーションのデプロイ手順と操作方法をまとめます。
 
 # 前提条件
@@ -23,7 +21,6 @@ cd sample-blog-podman
 NginxとDjangoのコンテナをビルドします。
 ```
 podman build -t django ./docker/django
-podman build -t nginx ./docker/nginx
 ```
 
 Podman Networkを作成します。
@@ -54,10 +51,9 @@ Ready to accept connections
 ビルドしたコンテナイメージをデプロイします。
 ```
 podman run -d --name django --network webnet -p 8000:8000 django
-podman run -d --name nginx --network webnet -p 8080:8080 nginx
 ```
 
-ブラウザで"localhost:8080"にアクセスするとSample Blogが表示されます。
+ブラウザで"localhost:8000"にアクセスするとSample Blogが表示されます。
 
 ![blog](./images/top.png)
 
