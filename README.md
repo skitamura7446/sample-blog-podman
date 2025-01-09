@@ -2,7 +2,6 @@
 このアプリケーションはローカル端末のPodman上で動作するサンプルブログです。
 
 ※サンプルアプリは[Django Girlsのチュートリアル](https://tutorial.djangogirls.org/ja/)をベースに多少編集を施したものになります。
-Web+APP+DBの一般的なWeb3層アプリになっています。
 
 ここではアプリケーションのデプロイ手順と操作方法をまとめます。
 
@@ -18,7 +17,7 @@ cd sample-blog-podman
 ```
 
 
-NginxとDjangoのコンテナをビルドします。
+Djangoのコンテナをビルドします。
 ```
 podman build -t django ./docker/django
 ```
